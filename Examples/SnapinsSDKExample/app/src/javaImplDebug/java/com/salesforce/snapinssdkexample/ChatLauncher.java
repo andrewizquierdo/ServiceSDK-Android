@@ -56,7 +56,7 @@ public class ChatLauncher {
         final ChatSessionListener chatListener = serviceSDKApplication.getChatSessionListener();
 
         // Create the chat UI from the ChatUIConfiguration object
-        ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, chatConfiguration).build())
+        ChatUI.configure(ServiceSDKUtils.getChatUIConfigurationBuilder(context, chatConfiguration).allowBackgroundNotifications(false).build())
                 .createClient(context)
                 .onResult(new Async.ResultHandler<ChatUIClient>() {
                     @Override
